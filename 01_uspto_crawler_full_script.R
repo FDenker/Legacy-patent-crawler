@@ -22,13 +22,15 @@ require(curl,quietly = TRUE, warn.conflicts = FALSE)
 
 #Whole polulation: 845675
 #Sample size chosen: 458
+vector_random_sample <- vector_random_sample <- readRDS(url("https://github.com/FDenker/us_ger_patent_scraping/blob/master/vector_random_sample.rds?raw=TRUE","rb"))
+print("vector_random_sample downloaded")
 
 #vector_random_sample <- sample (c(1:845674), size= 84567,replace =F)
 #http://patft.uspto.gov/netacgi/nph-Parser?Sect1=PTO2&Sect2=HITOFF&u=%2Fnetahtml%2FPTO%2Fsearch-adv.htm&r=49&p=1&f=G&l=50&d=PTXT&S1=DE.FREF.&OS=FREF/DE&RS=FREF/DE
 linkmaker <- function(starting_point,ending_point){
   vector_of_links <- c("")
   vector_of_links <- vector_of_links[-1]
-  vector_of_numbers<- readRDS("vector_random_sample.rds")
+  vector_of_numbers<- vector_random_sample
   for(i in starting_point:ending_point){
     link <- paste0("http://patft.uspto.gov/netacgi/nph-Parser?Sect1=PTO2&Sect2=HITOFF&u=%2Fnetahtml%2FPTO%2Fsearch-adv.htm&r=",
                    vector_of_numbers[i],
