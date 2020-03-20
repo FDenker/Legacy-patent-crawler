@@ -121,7 +121,7 @@ print(end)
 system.time({ data <- crawl_of_list_function(linkmaker(start,end))})
 
 
-saveRDS(data, file = paste0(group, ".rds"))
+saveRDS(data, file = paste0("data/uspto_download_files/data_group_",group, ".rds"))
 
 print("success")
 
