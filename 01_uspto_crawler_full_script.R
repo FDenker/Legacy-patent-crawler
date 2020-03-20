@@ -110,21 +110,3 @@ crawl_of_list_function <- function(crawl_list_to_go_through){
 }
 
 
-group <- 39
-print(group)
-#rstudioapi::jobRunScript("C:/Users/Frederic Denker/OneDrive - Zeppelin-University gGmbH/Dokumente/Semester 7/clean_patent_project/Patent_project/01_uspto_crawler_full_script.R", importEnv = TRUE)
-
-start <- (1+(group-1)*500)
-end <- ((group*500))
-print(start)
-print(end)
-system.time({ data <- crawl_of_list_function(linkmaker(start,end))})
-
-
-saveRDS(data, file = paste0("data/uspto_download_files/data_group_",group, ".rds"))
-
-print("success")
-
-#data3 <- readRDS("data/uspto_download_files/data_group_3.rds")
-#data <- readRDS("data/uspto_download_files/data_group_1.rds")
-

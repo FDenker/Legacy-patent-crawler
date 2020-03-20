@@ -27,6 +27,7 @@ saveRDS(data_depatisnet, file = paste0("data/depatisnet_files/data_depatisnet_gr
 print(paste0("Loading group number: ",group_number, " successfull"))
 }
 
+
 #rstudioapi::jobRunScript("C:/Users/Frederic Denker/OneDrive - Zeppelin-University gGmbH/Dokumente/Semester 7/clean_patent_project/Patent_project/00_master_script.R", importEnv = TRUE)
 
 
