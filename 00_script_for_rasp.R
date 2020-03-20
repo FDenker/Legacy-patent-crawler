@@ -2,9 +2,9 @@
 
 
 #rstudioapi::jobRunScript("C:/Users/Frederic Denker/OneDrive - Zeppelin-University gGmbH/Dokumente/Semester 7/clean_patent_project/Patent_project/01_uspto_crawler_full_script.R", importEnv = TRUE)
-
+devtools::source_url("https://github.com/FDenker/us_ger_patent_scraping/blob/master/01_uspto_crawler_full_script.R?raw=TRUE")
 start <- 44
-end <- 44
+end <- 45
 ##For which of the groups do want to run this##
 for (i in start:end) {
   #source("01_uspto_crawler_full_script.R")
@@ -15,7 +15,7 @@ for (i in start:end) {
   print(start_line)
   print(end_line)
   system.time({ data <- crawl_of_list_function(linkmaker(start_line,end_line))})
-  saveRDS(data, file = paste0("/home/pi/documents/data_group_",group_number, ".rds"))
+  saveRDS(data, file = paste0("/usr/share/R/data_group_",group_number, ".rds"))
   print(paste0("Saving group number: ",group_number, " successfull"))
 }
 
